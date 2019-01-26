@@ -1,0 +1,32 @@
+/* U.S. English. (Sorry, it's not English English.) */
+
+[enu default]
+
+GOTBLUECARD = "Picked up a blue keycard.";
+GOTYELWCARD = "Picked up a pink keycard.";
+GOTREDCARD = "Picked up a white keycard.";
+GOTBLUESKUL = "Picked up a blue skull key.";
+GOTYELWSKUL = "Picked up a pink skull key.";
+GOTREDSKUL = "Picked up a white skull key.";
+PD_BLUEO = "You need a blue key to activate this object";
+PD_REDO = "You need a white key to activate this object";
+PD_YELLOWO = "You need a pink key to activate this object";
+PD_BLUEK = "You need a blue key to open this door";
+PD_REDK = "You need a white key to open this door";
+PD_YELLOWK = "You need a pink key to open this door";
+PD_BLUECO = "You need a blue card to activate this object";
+PD_REDCO = "You need a white card to activate this object";
+PD_YELLOWCO = "You need a pink card to activate this object";
+PD_BLUESO = "You need a blue skull to activate this object";
+PD_REDSO = "You need a white skull to activate this object";
+PD_YELLOWSO = "You need a pink skull to activate this object";
+
+
+// New strings from BOOM
+PD_BLUEC = "You need a blue card to open this door";
+PD_REDC = "You need a white card to open this door";
+PD_YELLOWC = "You need a pink card to open this door";
+PD_BLUES = "You need a blue skull to open this door";
+PD_REDS = "You need a white skull to open this door";
+PD_YELLOWS = "You need a pink skull to open this door";
+
