@@ -1,0 +1,4 @@
+GameInfo
+{
+	PlayerClasses = "DoomGuy", "DoomGal", "DoomAdr"
+}
