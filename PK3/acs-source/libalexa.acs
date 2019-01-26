@@ -1,0 +1,216 @@
+// YukiRaven's Common ACS Library
+// Copyright (C) 2018 Alexa Jones-Gonzales <alexa@partition36.com>
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#library "libalexa"
+#include "zcommon.acs"
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Defines and Other Global Stuff
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#libdefine FORCE_DEBUG_MODE      "alexa_force_debug_mode"
+#libdefine DEFAULT_MESSAGE_COLOR CR_PURPLE
+#libdefine SPAWN_SCRIPT_DELAY    2
+
+int MAX_SPAWN_ATTEMPTS = 69;  // nice
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Functions
+//
+////////////////////////////////////////////////////////////////////////////////
+
+function void DebugLog(str message) {
+    if(GetCVar(FORCE_DEBUG_MODE) > 0) {
+        Log(s:"[DEBUG]: ", s:message);
+    }
+}
+
+// HudMessage(msg; HUDMSG_TYPEON,  id, color, x, y, holdTime, typeTime, fadeTime, [alpha]);
+// HudMessage(msg; HUDMSG_FADEOUT, id, color, x, y, holdTime, fadeTime, [alpha]);
+
+function void PrintMessage(str message) {
+    SetFont("BIGFONT");
+    HudMessage(s:message; HUDMSG_TYPEON, 1, DEFAULT_MESSAGE_COLOR,
+               1.5, 0.25,  // X, Y
+               4.0,        // Hold Time
+               0.03,       // Type Time
+               2.4);       // Fade Time
+
+    Log(s:message);
+}
+
+function void PrintMessageNoLog(str message) {
+    SetFont("BIGFONT");
+    HudMessage(s:message; HUDMSG_TYPEON, 1, DEFAULT_MESSAGE_COLOR,
+               1.5, 0.25,  // X, Y
+               4.0,        // Hold Time
+               0.03,       // Type Time
+               2.4);       // Fade Time
+}
+
+function void PrintMessageInstant(str message) {
+    SetFont("BIGFONT");
+    HudMessage(s:message; HUDMSG_FADEOUT, 1, DEFAULT_MESSAGE_COLOR,
+               1.5, 0.25,  // X, Y
+               4.0,        // Hold Time
+               2.4);       // Fade Time
+
+    Log(s:message);
+}
+
+// Adapted from HDoom
+function bool UsingBrutalDoomP(void) {
+    int tid = UniqueTID();
+
+    if(SpawnForced("Doomer", 0, 0, 0, tid)) {
+        Thing_Remove(tid);
+
+        tid = UniqueTID();
+
+        if(SpawnForced("Melee_Attacks", 0, 0, 0, tid)) {
+            Thing_Remove(tid);
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Spawning Scripts
+//
+////////////////////////////////////////////////////////////////////////////////
+
+script "sure-spawn-tid" (int class, int spot, int tid) {
+    int numSpawned = 0;
+    int attemptNum = 0;
+
+    DebugLog(StrParam(s:"Attempting to spawn a ", s:class, s:" at spot ", i:spot, s:" with tid ", i:tid));
+
+    while(numSpawned <= 0) {
+        numSpawned = SpawnSpotFacing(class, spot, tid);
+        Delay(SPAWN_SCRIPT_DELAY);
+
+        attemptNum++;
+
+        if(attemptNum == MAX_SPAWN_ATTEMPTS) {
+            Log(s:"Unsuccessful at spawning a ", s:class, s:" at spot ", i:spot, s:" with tid ", i:tid,
+                s:"!  Hope it wasn't needed...");
+            terminate;
+        }
+    }
+
+    SpawnSpot("TeleportFog", spot);
+}
+
+script "sure-spawn-facing" (int class, int spot, int fog) {
+    int numSpawned = 0;
+    int attemptNum = 0;
+
+    DebugLog(StrParam(s:"Attempting to spawn a ", s:class, s:" at spot ", i:spot, s:" (fog? ", i:fog, s:")"));
+
+    while(numSpawned <= 0) {
+        numSpawned = SpawnSpotFacing(class, spot);
+        Delay(SPAWN_SCRIPT_DELAY);
+
+        attemptNum++;
+
+        if(attemptNum == MAX_SPAWN_ATTEMPTS) {
+            Log(s:"Unsuccessful at spawning a ", s:class, s:" at spot ", i:spot, s:"!  Hope it wasn't needed...");
+            terminate;
+        }
+    }
+
+    if(fog != 0) {
+        SpawnSpot("TeleportFog", spot);
+    }
+}
+
+function void SureSpawnItem(str class, int spot) {
+    SpawnSpotForced("ItemFog", spot, 0, 0);
+    SpawnSpotForced(class, spot, 0, 0);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Utility Scripts
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// StartACS is kind of redundant, but I sometimes want some extra
+// debugging output, so I wrapped the usual Execute() call in it
+script "start-acs" (int scriptNum, int named, int wait) {
+    if(named) {
+        if(wait) {
+            DebugLog(StrParam(s:"\cnStarting script and waiting...: ", s:scriptNum));
+            ACS_NamedExecuteWait(scriptNum, 0, 0, 0, 0);
+            DebugLog(StrParam(s:"\cq", s:scriptNum, s:" has run"));
+
+            Delay(1);
+        } else {
+            DebugLog(StrParam(s:"\cnStarting script: ", s:scriptNum));
+            ACS_NamedExecute(scriptNum, 0, 0, 0, 0);
+        }
+    } else {
+        if(wait) {
+            DebugLog(StrParam(s:"\cnStarting script# ", i:scriptNum, s:"and waiting..."));
+            ACS_ExecuteWait(scriptNum, 0, 0, 0, 0);
+            DebugLog(StrParam(s:"\cqScript #", i:scriptNum, s:" has run"));
+
+            Delay(1);
+        } else {
+            DebugLog(StrParam(s:"\cnStarting script #", i:scriptNum));
+            ACS_Execute(scriptNum, 0, 0, 0, 0);
+        }
+    }
+}
+
+// These next three are also kind of redundant, but again, I wanted some extra
+// debugging output
+script "setf-cvar" (int cvar, int newValue) {
+    int oldValue = GetUserCVar(0, cvar);
+    SetUserCVar(0, cvar, newValue);
+
+    Delay(2);
+    DebugLog(StrParam(s:"Cvar ", s:cvar, s:" set from ", i:oldValue, s:" to ",
+                      i:(GetUserCVar(0, cvar))));
+}
+
+script "incf-cvar" (int cvar) {
+    int oldValue = GetUserCVar(0, cvar);
+    int newValue = oldValue + 1;
+    SetUserCVar(0, cvar, newValue);
+
+    Delay(2);
+
+    DebugLog(StrParam(s:"Cvar ", s:cvar, s:" increased from ", i:oldValue, s:" to ",
+                      i:(GetUserCVar(0, cvar))));
+}
+
+script "decf-cvar" (int cvar) {
+    int oldValue = GetUserCVar(0, cvar);
+    int newValue = oldValue - 1;
+    SetUserCVar(0, cvar, newValue);
+
+    Delay(2);
+    DebugLog(StrParam(s:"Cvar ", s:cvar, s:" decreased from ", i:oldValue, s:" to ",
+                      i:(GetUserCVar(0, cvar))));
+}
