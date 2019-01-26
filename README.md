@@ -10,8 +10,11 @@ kevansevans - Project Leader
 ### Textures
 
 Jimmy - Jimmytex
+Barrels O' Fun - Pride doors
 
 ### Sprites
+
+Barrels O' Fun - Pride Keys
 
 Captain Ventris - Female Marine
 
