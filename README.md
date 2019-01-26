@@ -8,11 +8,16 @@ kevansevans - Project Leader
 ### Mapping
 (None currently)
 ### Textures
-(None currently)
+
+Jimmy - Jimmytex
+
 ### Sprites
-(None currently)
+
+Captain Ventris - Female Marine
+
 ### Audio
 (None currently)
 ### Scripting
 (None currently)
 ### Just wanted their name here because they wnted to show support
+(None currently)
