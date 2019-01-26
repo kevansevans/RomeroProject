@@ -4,6 +4,7 @@ PK3 format please
 
 ### General
 kevansevans - Project Leader
+Ribonucleic Asshat (PermaNoob) - Titlepic
 
 ### Mapping
 (None currently)
