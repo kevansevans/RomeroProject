@@ -1,0 +1,89 @@
+Class PowerPainTrain : PowerSpeed
+{
+	Default
+	{
+		Obituary "%o got ran over by %k.";
+		Powerup.Duration -20;
+		Powerup.Color "ff 00 00", 0.5;
+	}
+	Actor snd;
+	override Color GetBlend()
+	{
+		return Color(int(BlendColor.a*min(1.0,EffectTics/140.)),BlendColor.r,BlendColor.g,BlendColor.b);
+	}
+	override void ModifyDamage( int damage, Name damageType, out int newdamage, bool passive )
+	{
+		newdamage = damage;
+		if ( !passive ) return;
+		double spd = Owner.vel.xy.length();
+		if ( Owner.player ) spd += abs(Owner.player.cmd.forwardmove>>8)+abs(Owner.player.cmd.sidemove>>8);
+		if ( spd < 3 ) return;
+		// apply damage reduction based on how fast we're going
+		newdamage /= int(max((spd-3)/8.,1.));
+	}
+	override void DoEffect()
+	{
+		Super.DoEffect();
+		if ( !Owner ) return;
+		double spd = Owner.vel.xy.length();
+		if ( Owner.player ) spd += abs(Owner.player.cmd.forwardmove>>8)+abs(Owner.player.cmd.sidemove>>8);
+		if ( spd < 3 ) return;
+		Vector2 dir = Owner.vel.xy.unit();
+		// look for things we could potentially bump into
+		let bi = BlockThingsIterator.Create(Owner,200);
+		bool bumped = false;
+		while ( bi.Next() )
+		{
+			Actor a = bi.Thing;
+			if ( !a || (a == Owner) || !a.bSHOOTABLE || a.bTHRUACTORS ) continue;
+			Vector3 diff = level.Vec3Diff(level.Vec3Offset(owner.pos,owner.vel),level.Vec3Offset(a.pos,a.vel));
+			if ( (abs(diff.x) > owner.radius+a.radius) || (abs(diff.y) > owner.radius+a.radius) ) continue;
+			if ( (diff.z > owner.height) || (diff.z < -a.height) ) continue;
+			double moveang = atan2(dir.y,dir.x);
+			Vector3 sc = level.SphericalCoords(Owner.pos,a.pos,(moveang,0));
+			if ( (abs(sc.x) > 45) ) continue;
+			// bosses and large monsters will stop the player
+			if ( a.bBOSS || a.bDONTTHRUST || (a.Mass >= Mass*5) )
+			{
+				if ( bumped ) continue;
+				bumped = true;
+				Owner.A_QuakeEx(3,3,3,8,0,128,"",QF_RELATIVE|QF_SCALEDOWN);
+				Owner.vel.xy -= dir*(5+(spd*30/Owner.mass));
+				Owner.vel.z += 3+(spd*(20/Owner.mass));
+				Owner.A_PlaySound("paintrain/hit",CHAN_BODY);
+				Owner.ReactionTime = 3;
+				Owner.DamageMobj(self,Owner,int(3+spd*0.02),'Melee',DMG_THRUSTLESS);
+				if ( !Owner ) return;
+			}
+			else
+			{
+				Owner.A_QuakeEx(3,3,3,8,0,128,"",QF_RELATIVE|QF_SCALEDOWN);
+				a.DamageMobj(self,Owner,int(50+spd*2),'Melee',DMG_THRUSTLESS);
+				a.A_PlaySound("paintrain/hit",CHAN_BODY);
+				Vector2 pushdir = Owner.Vec2To(a).unit()*0.2+dir*0.8;
+				a.vel.xy += pushdir*(12+(spd*80/a.mass));
+				a.vel.z += 5+(spd*(50/a.mass));
+			}
+		}
+	}
+}
+
+Class PainTrain : PowerupGiver
+{
+	Default
+	{
+		+COUNTITEM;
+		+INVENTORY.AUTOACTIVATE;
+		+INVENTORY.ALWAYSPICKUP;
+		+INVENTORY.BIGPOWERUP;
+		Inventory.MaxAmount 0;
+		Powerup.Type "PowerPainTrain";
+		Inventory.PickupMessage "Here comes the pain train!";
+	}
+	States
+	{
+	Spawn:
+		PTRN ABCDCB 6 Bright;
+		Loop;
+	}
+}

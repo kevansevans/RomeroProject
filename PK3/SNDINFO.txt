@@ -1,0 +1,2 @@
+paintrain/hit  dspunch
+$limit paintrain/hit 32
