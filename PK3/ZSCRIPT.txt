@@ -1,1 +1,2 @@
 #include "ZSCRIPT/Player.txt"
+#include "ZSCRIPT/DECORATION/LIGHTS/Torches.txt"

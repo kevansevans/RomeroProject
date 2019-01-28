@@ -1,0 +1,27 @@
+Class LightBlueTorch : BlueTorch
+{
+  States
+  {
+  Spawn:
+    TLBL ABCD 4 Bright;
+    Loop;
+  }
+}
+Class PinkTorch : BlueTorch
+{
+  States
+  {
+  Spawn:
+    TPIN ABCD 4 Bright;
+    Loop;
+  }
+}
+Class WhiteTorch : BlueTorch
+{
+  States
+  {
+  Spawn:
+    TWHI ABCD 4 Bright;
+    Loop;
+  }
+}
