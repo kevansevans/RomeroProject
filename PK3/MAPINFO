@@ -2,3 +2,9 @@ GameInfo
 {
 	PlayerClasses = "DoomGuy", "DoomGal", "DoomAdr"
 }
+SpawnNums
+{
+  10000 = LightBlueTorch
+  10001 = PinkTorch
+  10002 = WhiteTorch
+}
