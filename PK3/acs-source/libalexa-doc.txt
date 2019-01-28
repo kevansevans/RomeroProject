@@ -3,21 +3,20 @@ Alexa "YukiRaven" Jones-Gonzales
 
 A very basic ACS library that has things I tend to use over and over.
 
-== CVars
-
-  * `alexa_force_debug_mode`: When set to a number greater than or equal to 1,
-    calls to `DebugLog` will be printed to the console.
-
 == Globals
 
+  * `DEBUG_MODE_ENABLED_P`: When set to non-zero, this enabled output from
+    `DebugLog()`.  Default: `0`.
+  
   * `MAX_SPAWN_ATTEMPTS`: This defines how many times the various spawning
-    functions will attempt to spawn a thing before giving up.
+    functions will attempt to spawn a thing before giving up.  Default: `69`.
 
   * `SPAWN_SCRIPT_DELAY`: The number of tics to wait between attempts when
-    attempting to spawn a thing with the various spawning functions.
+    attempting to spawn a thing with the various spawning functions.  Default:
+    `2`;
 
   * `DEFAULT_MESSAGE_COLOR`: The color the various PrintMessage functions will
-    use.
+    use. Default: `CR_PURPLE`.
 
 
 
@@ -77,11 +76,18 @@ times.
 On success, a `DebugLog` message will be printed.  On complete failure, it will
 `Log()` the failed attempt to the console.
 
-=== `function SureSpawnItem(str class, int spot)`
+=== `function SpawnItem(str class, int spot)`
 
 Spawn an item of the given `class` at the given `spot`.  An `ItemFog` thing will
 also be spawned automatically at the same `spot`.  This function does not
 re-attempt spawning if the first spawn fails.
+
+=== `function void SpawnRange(str class, int start, int end, int showFog)`
+
+Spawns things of the given `class` at the spots with Thing IDs starting at
+`start` and ending at `end`, inclusive.  An `ItemFog` thing will also be spawned
+automatically at the same spots if `showFog` is non-zero.  This function calls
+`SpawnSpotFacingForced()` internally and thus some spawning attempts may fail.
 
 
 
