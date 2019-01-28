@@ -2,7 +2,7 @@ GameInfo
 {
 	PlayerClasses = "DoomGuy", "DoomGal", "DoomAdr"
 }
-SpawnNums
+DoomEdNums
 {
   10000 = LightBlueTorch
   10001 = PinkTorch
