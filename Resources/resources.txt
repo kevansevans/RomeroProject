@@ -1,0 +1,6 @@
+dmnbreed.pk3: Demon Breed textures by Cage
+qrpdsize.pk3: Quake Revitalization Project textures, downsized to Doom sizes
+jimmytex.wad: Doom edits by Jimmy, Cage, EffinghamHuffnagel, and Fuzzball
+jom6-d2gfx-d1.wad: Doom 1 textures for Doom 2 by Jimmy
+jom6-extradecorate.wad: Joy of Mapping 6 extra decorations by Jimmy
+rfhelltx.wad: Textures from Xaser by Ravagefox (rf`)

@@ -25,6 +25,7 @@
 
 #libdefine FORCE_DEBUG_MODE      "alexa_force_debug_mode"
 
+int DEBUG_MODE_ENABLED_P = 0;
 int DEFAULT_MESSAGE_COLOR = CR_PURPLE;
 int MAX_SPAWN_ATTEMPTS = 69;  // nice
 int SPAWN_SCRIPT_DELAY = 2;
@@ -36,7 +37,7 @@ int SPAWN_SCRIPT_DELAY = 2;
 ////////////////////////////////////////////////////////////////////////////////
 
 function void DebugLog(str message) {
-    if(GetCVar(FORCE_DEBUG_MODE) > 0) {
+    if(DEBUG_MODE_ENABLED_P != 0) {
         Log(s:"[DEBUG]: ", s:message);
     }
 }
@@ -144,7 +145,16 @@ script "sure-spawn-facing" (int class, int spot, int fog) {
     }
 }
 
-function void SureSpawnItem(str class, int spot) {
+function void SpawnRange(str class, int start, int end, int showFog) {
+    int i = 0;
+
+    for(i = start; i <= end; i++) {
+        SpawnSpotFacingForced(class, i, 0);
+        SpawnSpotForced("TeleportFog", i, 0, 0);
+    }
+}
+
+function void SpawnItem(str class, int spot) {
     SpawnSpotForced("ItemFog", spot, 0, 0);
     SpawnSpotForced(class, spot, 0, 0);
 }
