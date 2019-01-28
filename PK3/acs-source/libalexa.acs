@@ -1,5 +1,5 @@
 // YukiRaven's Common ACS Library
-// Copyright (C) 2018 Alexa Jones-Gonzales <alexa@partition36.com>
+// Copyright (C) 2018-2019 Alexa Jones-Gonzales <alexa@partition36.com>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -24,10 +24,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #libdefine FORCE_DEBUG_MODE      "alexa_force_debug_mode"
-#libdefine DEFAULT_MESSAGE_COLOR CR_PURPLE
-#libdefine SPAWN_SCRIPT_DELAY    2
 
+int DEFAULT_MESSAGE_COLOR = CR_PURPLE;
 int MAX_SPAWN_ATTEMPTS = 69;  // nice
+int SPAWN_SCRIPT_DELAY = 2;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -157,7 +157,7 @@ function void SureSpawnItem(str class, int spot) {
 
 // StartACS is kind of redundant, but I sometimes want some extra
 // debugging output, so I wrapped the usual Execute() call in it
-script "start-acs" (int scriptNum, int named, int wait) {
+script "start-acs"(int scriptNum, int named, int wait) {
     if(named) {
         if(wait) {
             DebugLog(StrParam(s:"\cnStarting script and waiting...: ", s:scriptNum));
