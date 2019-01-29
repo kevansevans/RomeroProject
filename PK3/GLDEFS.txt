@@ -1,3 +1,11 @@
+////
+//// Project Romero GLDEFS
+////
+
+///
+/// PainTrain powerup
+///
+
 pulselight PAINTRAIN
 {
 	color 1.0 0.0 0.0
@@ -11,4 +19,53 @@ pulselight PAINTRAIN
 object PainTrain
 {
     frame PTRN { light PAINTRAIN }
+}
+
+///
+/// Trans-colored Torches
+///
+
+flickerlight2 LightBlueTorchLight {
+    color 0.0 0.92 0.93
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+    attenuate 1
+}
+
+object LightBlueTorch {
+    frame TLBL {
+        light LightBlueTorchLight
+    }
+}
+
+flickerlight2 PinkTorchLight {
+    color 0.90 0.55 0.75
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+    attenuate 1
+}
+
+object PinkTorch {
+    frame TPIN {
+        light PinkTorchLight
+    }
+}
+
+flickerlight2 WhiteTorchLight {
+    color 1.0 1.0 1.0
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+    attenuate 1
+}
+
+object WhiteTorch {
+    frame TWHI {
+        light WhiteTorchLight
+    }
 }
