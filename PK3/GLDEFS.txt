@@ -1,0 +1,14 @@
+pulselight PAINTRAIN
+{
+	color 1.0 0.0 0.0
+	size 60
+	secondarySize 63
+	interval 2.0
+	offset 0 16 0
+	attenuate 1
+}
+
+object PainTrain
+{
+    frame PTRN { light PAINTRAIN }
+}
