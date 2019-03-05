@@ -13,3 +13,12 @@ switch SWSPIA on sound Switch1 pic SWSPIB tics 0
 switch SWSPIB off sound Switch2 pic SWSPIA tics 0
 
 warp flat NUKEWARP
+
+//Jimmy
+warp flat jimmytex/WBLOOD
+warp flat jimmytex/WCACO
+warp flat jimmytex/WCACO2
+warp flat jimmytex/WCACOWAT
+warp flat jimmytex/WORANGE
+warp flat jimmytex/WNUKAGE
+warp flat jimmytex/WWATER
