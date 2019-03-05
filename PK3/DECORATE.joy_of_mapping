@@ -1,0 +1,641 @@
+Actor Bush1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, short"
+	Radius 12
+	Height 24
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 A -1
+		Stop
+	}
+}
+
+Actor Bush2 : Bush1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, short, damaged"
+	States
+	{
+	Spawn:
+		BUS1 B -1
+		Stop
+	}
+}
+
+Actor Bush3 : Bush1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, short, very damaged"
+	States
+	{
+	Spawn:
+		BUS1 C -1
+		Stop
+	}
+}
+
+Actor BushTall1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, tall"
+	Radius 12
+	Height 46
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 D -1
+		Stop
+	}
+}
+
+Actor BushTall2 : Bush1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, tall, damaged 1"
+	States
+	{
+	Spawn:
+		BUS1 E -1
+		Stop
+	}
+}
+
+Actor BushTall3 : BushTall1
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Bush, tall, damaged 2"
+	States
+	{
+	Spawn:
+		BUS1 F -1
+		Stop
+	}
+}
+
+Actor Blue_Column : Column
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Floor lamp, blue"
+	States
+	{
+	Spawn:
+		COLB A -1 Bright
+		Stop
+	}
+}
+
+Actor Red_Column : Column
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Floor lamp, red"
+	States
+	{
+		Spawn:
+		COLR A -1 Bright
+		Stop
+	}
+}
+
+Actor CorpsePile
+{
+	//$Category "JoM6 Gore"
+	//$Title "Corpse pile"
+	Radius 24
+	Height 60
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		PILE A -1
+		Stop
+	}
+}
+
+Actor TLamp1
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Yellow techlamp, tall"
+	Radius 16
+	Height 80
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		LAMT A -1 Bright
+		Stop
+	}
+}
+
+Actor TLamp2
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Yellow techlamp, short"
+	Radius 16
+	Height 60
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		LAMT B -1 Bright
+		Stop
+	}
+}
+
+Actor MarbleBrazier
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Marble brazier"
+	Radius 20
+	Height 32
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		HBBQ ABC 4 Bright
+		Loop
+	}
+}
+
+Actor YellowTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Tall yellow firestick"
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		YELT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor WhiteTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Tall white firestick"
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TGRY ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor PurpleTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Tall purple firestick"
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		PRPT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor ShortYellowTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Short yellow firestick"
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SYLT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor ShortWhiteTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Short white firestick"
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SGYT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor ShortPurpleTorch
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Short purple firestick"
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SPRT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor HangingLanternBig
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Hanging lantern, tall"
+	Radius 10
+	Height 80
+	ProjectilePassHeight -16
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP ABCD 6 Light("BIGLANTERN")
+		Loop
+	}
+}
+
+Actor HangingLanternSmall
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Hanging lantern, short"
+	Radius 6
+	Height 45
+	ProjectilePassHeight -16
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP EFGH 6 Light("SMALLLANTERN")
+		Loop
+	}
+}
+
+Actor BlackCandleChandelier
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Chandelier"
+	Radius 20
+	Height 55
+	ProjectilePassHeight -16
+	+SPAWNCEILING
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		HLMP I -1 Light("BLACKCHANDELIER")
+		Stop
+	}
+}
+
+// Gorey messes from Demonastery
+Actor GoreyMess1
+{
+	//$Category "JoM6 Gore"
+	//$Title "Gorey mess 1"
+	States
+	{
+	Spawn:
+		MES1 A -1
+		Stop
+	}
+}
+
+Actor GoreyMess2
+{
+	//$Category "JoM6 Gore"
+	//$Title "Gorey mess 2"
+	States
+	{
+	Spawn:
+		MES2 A -1
+		Stop
+	}
+}
+
+Actor GoreyMess3
+{
+	//$Category "JoM6 Gore"
+	//$Title "Gorey mess 3"
+	States
+	{
+	Spawn:
+		MES3 A -1
+		Stop
+	}
+}
+
+Actor BurningVictim
+{
+	//$Category "JoM6 Gore"
+	//$Title "Human barbeque"
+	+SOLID
+	Radius 8
+	Height 108
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		BAV2 ABCD 4 Bright
+		Loop
+	}
+}
+
+Actor RockHead
+{
+	//$Category "JoM6 Gore"
+	//$Title "Stalagmite w/ marine head"
+	Height 40
+	Radius 17
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		DMHR A 10
+		Loop
+	}
+}
+
+Actor HangingMarine
+{
+	//$Category "JoM6 Gore"
+	//$Title "Hanging marine"
+	Radius 16
+	Height 88
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+	Spawn:
+		HANP B -1
+		Stop
+	}
+}
+
+//Chaingunner Head
+Actor ChaingunGuyHead
+{
+	//$Category "JoM6 Gore"
+	//$Title "Impaled chaingunner head"
+	Radius 16
+	Height 56
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POL8 A -1
+		Stop
+	}
+}
+
+//Zombieman Head
+Actor ZombieHead
+{
+	//$Category "JoM6 Gore"
+	//$Title "Impaled zombie head"
+	Radius 16
+	Height 56
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POL9 A -1
+		Stop
+	}
+}
+
+//Doomguy Head
+Actor MarineHead
+{
+	//$Category "JoM6 Gore"
+	//$Title "Impaled marine head"
+	Radius 16
+	Height 56
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLA A -1
+		Stop
+	}
+}
+
+//3 Doomguy Heads, Short
+Actor MarineHeadShishKebob
+{
+	//$Category "JoM6 Gore"
+	//$Title "Marine head shish kebob"
+	Radius 16
+	Height 48
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLC A -1
+		Stop
+}
+}
+
+//Doomguy skewered, twitching
+Actor ImpaledMarineTwitching
+{
+	//$Category "JoM6 Gore"
+	//$Title "Impaled marine, twitching"
+	Radius 16
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLF A 6
+		POLF B 8
+		Loop
+	}
+}
+
+//Doomguy skewered, long arm
+Actor ImpaledMarine
+{
+	//$Category "JoM6 Gore"
+	//$Title "Impaled marine"
+	Radius 16
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLG A -1
+		Stop
+	}
+}
+
+//Pool of Blood with Marine Helmet
+Actor MarineHelmetGibs
+{
+	//$Category "JoM6 Gore"
+	//$Title "Pool of gore w/ marine head"
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+	Spawn:
+		GIB1 A -1
+		Stop
+	}
+}
+
+Actor SkeweredMarine
+{
+	//$Category "JoM6 Gore"
+	//$Title "Skewered marine"
+	Radius 16
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLS A -1
+		Stop
+	}
+}
+
+Actor SkeweredZombie
+{
+	//$Category "JoM6 Gore"
+	//$Title "Skewered zombieman"
+	Radius 16
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLS B -1
+		Stop
+	}
+}
+
+Actor SkeweredShotgunGuy
+{
+	//$Category "JoM6 Gore"
+	//$Title "Skewered shotgunner"
+	Radius 16
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POLS C -1
+		Stop
+	}
+}
+
+Actor DemonicStatue
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Demonic statue"
+	Height 134
+	Radius 19
+	+SOLID
+	States
+	{
+	Spawn:
+		DSTT E -1
+		Stop
+	}
+}
+
+Actor FlutedGreenColumn	: Actor
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Fluted green column"
+	Radius 16
+	Height 128
+	+SOLID
+	States
+	{
+	Spawn:
+		COL7 A -1
+		Stop
+	}
+}
+
+Actor FlutedRedColumn
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Fluted red column"
+	Radius 16
+	Height 128
+	+SOLID
+	States
+	{
+	Spawn:
+		COL8 A -1
+		Stop
+	}
+}
+
+Actor SkullCandle
+{
+	//$Category "JoM6 Decorations"
+	//$Title "Skull candle"
+	Radius 20
+	Height 14
+	States
+	{
+	Spawn:
+		SCND AB 10 Bright
+		Loop
+	}
+}
+
+Actor PlaceableFire
+{
+	//$Category "JoM6 Light sources"
+	//$Title "Fire"
+	States
+	{
+	Spawn:
+		FCAN DEF 4 Bright
+		Loop
+	}
+}
