@@ -1,11 +1,408 @@
+clearepisodes
+
+episode MAP01
+{
+	name = "Doom 1 Maps"
+	key = "1"
+}
+
+episode MAP11
+{
+	name = "Doom 2 Maps"
+	key = "2"
+}
+
+episode MAP21
+{
+	name = "Quake 1 Maps"
+	key = "Q"
+}
+
+map MAP01 ""
+{
+    cluster = 1
+	levelnum = 1
+	next = "MAP02"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP02 ""
+{
+    cluster = 1
+	levelnum = 2
+	next = "MAP03"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP03 ""
+{
+    cluster = 1
+	levelnum = 3
+	next = "MAP04"
+	secretnext = "MAP09"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP04 ""
+{
+    cluster = 1
+	levelnum = 4
+	next = "MAP05"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP05 ""
+{
+    cluster = 1
+	levelnum = 5
+	next = "MAP06"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP06 "Slime Factory"
+{
+    cluster = 1
+	levelnum = 6
+	next = "MAP07"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP07 ""
+{
+    cluster = 1
+	levelnum = 7
+	next = "MAP08"
+	secretnext = "MAP10"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP08 ""
+{
+	cluster = 1
+	levelnum = 8
+	next = "EndGame1"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+    nointermission
+}
+
+map MAP09 ""
+{
+	cluster = 1
+	levelnum = 9
+	next = "MAP04"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP10 ""
+{
+	cluster = 1
+	levelnum = 10
+	next = "MAP08"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+////////////////////////////////////////////////
+
+map MAP11 ""
+{
+	cluster = 2
+	levelnum = 1
+	next = "MAP12"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP12 ""
+{
+	cluster = 2
+	levelnum = 2
+	next = "MAP13"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP13 ""
+{
+	cluster = 2
+	levelnum = 3
+	next = "MAP14"
+	secretnext = "MAP19"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP14 ""
+{
+	cluster = 2
+	levelnum = 4
+	next = "MAP15"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP15 ""
+{
+	cluster = 2
+	levelnum = 5
+	next = "MAP16"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP16 "Devil's Keep"
+{
+	cluster = 2
+	levelnum = 6
+	next = "MAP17"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP17 ""
+{
+	cluster = 2
+	levelnum = 7
+	next = "MAP18"
+	secretnext = "MAP20"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP18 "Romero is Playing With You"
+{
+	cluster = 2
+	levelnum = 8
+	next = "EndGame2"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+    nointermission
+}
+
+map MAP19 ""
+{
+	cluster = 2
+	levelnum = 9
+	next = "MAP14"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP20 ""
+{
+	cluster = 2
+	levelnum = 10
+	next = "MAP18"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+/////////////////////////////////////////////////////////
+
+map MAP21 ""
+{
+	cluster = 3
+	levelnum = 1
+	next = "MAP22"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP22 ""
+{
+	cluster = 3
+	levelnum = 2
+	next = "MAP23"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP23 ""
+{
+	cluster = 3
+	levelnum = 3
+	next = "MAP24"
+	secretnext = "MAP29"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP24 ""
+{
+	cluster = 3
+	levelnum = 4
+	next = "MAP25"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP25 ""
+{
+	cluster = 3
+	levelnum = 5
+	next = "MAP26"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP26 ""
+{
+	cluster = 3
+	levelnum = 6
+	next = "MAP27"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP27 ""
+{
+	cluster = 3
+	levelnum = 7
+	next = "MAP28"
+	secretnext = "MAP30"
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP28 ""
+{
+	cluster = 3
+	levelnum = 8
+	next = "EndGame3"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+    nointermission
+}
+
+map MAP29 ""
+{
+	cluster = 3
+	levelnum = 9
+	next = "MAP24"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
+map MAP30 ""
+{
+	cluster = 3
+	levelnum = 10
+	next = "MAP28"
+	secretnext = ""
+	sky1 = "SKY1"
+	par = 60
+	music = ""
+}
+
 GameInfo
 {
 	PlayerClasses = "DoomGuy", "DoomGal", "DoomAdr"
 }
 DoomEdNums
 {
-  10000 = LightBlueTorch
-  10001 = PinkTorch
-  10002 = WhiteTorch
-  11000 = PainTrain
+	10000 = LightBlueTorch
+	10001 = PinkTorch
+	10002 = WhiteTorch
+	11000 = PainTrain
+  
+	10100 = Bush1
+	10101 = Bush2
+	10102 = Bush3
+	10103 = BushTall1
+	10104 = BushTall2
+	10105 = BushTall3
+	10106 = Blue_Column
+	10107 = Red_Column
+	10108 = CorpsePile
+	10109 = TLamp1
+	10110 = TLamp2
+	10111 = MarbleBrazier
+	10112 = YellowTorch
+	10114 = PurpleTorch
+	10115 = ShortYellowTorch
+	10116 = ShortWhiteTorch
+	10117 = ShortPurpleTorch
+	10118 = HangingLanternBig
+	10119 = HangingLanternSmall
+	10120 = BlackCandleChandelier
+	10121 = GoreyMess1
+	10122 = GoreyMess2
+	10123 = GoreyMess3
+	10124 = BurningVictim
+	10125 = RockHead
+	10126 = HangingMarine
+	10127 = ChaingunGuyHead
+	10128 = ZombieHead
+	10129 = MarineHead
+	10130 = MarineHeadShishKebob
+	10131 = ImpaledMarineTwitching
+	10132 = ImpaledMarine
+	10133 = MarineHelmetGibs
+	10134 = SkeweredMarine
+	10135 = SkeweredZombie
+	10136 = SkeweredShotgunGuy
+	10137 = DemonicStatue
+	10138 = FlutedGreenColumn
+	10139 = FlutedRedColumn
+	10140 = SkullCandle
+	10141 = PlaceableFire
 }

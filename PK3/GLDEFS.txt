@@ -69,3 +69,253 @@ object WhiteTorch {
         light WhiteTorchLight
     }
 }
+///////////////////////////////////////////////////////////////////////////////
+//Joy of Mapping
+///////////////////////////////////////////////////////////////////////////////
+// Blue floor lamp
+pointlight BLUE_LAMP
+{
+    color 0.8 0.8 1.0
+    size 84
+    offset 0 44 0
+	attenuate 1
+}
+
+object Blue_Column
+{
+    frame COLB { light BLUE_LAMP }
+}
+
+// Red floor lamp
+pointlight RED_LAMP
+{
+    color 1.0 0.8 0.8
+    size 84
+    offset 0 44 0
+	attenuate 1
+}
+
+object Red_Column
+{
+    frame COLR { light RED_LAMP }
+}
+
+// Tech lamps
+pointlight TLIGHT1
+{
+    color 1.0 1.0 0.8
+    size 56
+    offset 0 72 0
+}
+
+pointlight TLIGHT2
+{
+    color 1.0 1.0 0.8
+    size 40
+    offset 0 44 0
+}
+
+object TLamp1
+{
+    frame LAMTA { light TLIGHT1 }
+}
+
+object TLamp2
+{
+    frame LAMTB { light TLIGHT2 }
+}
+
+// Marble brazier
+FlickerLight MTORCH_1
+{
+	Color 1.0 1.0 0.0
+	Size 34
+	SecondarySize 38
+	Chance 0.3
+	Offset 0 30 0
+}
+
+FlickerLight MTORCH_2
+{
+	Color 1.0 1.0 0.0
+	Size 38
+	SecondarySize 42
+	Chance 0.3
+	Offset 0 30 0
+}
+
+FlickerLight MTORCH_3
+{
+	Color 1.0 1.0 0.0
+	Size 36
+	SecondarySize 40
+	Chance 0.3
+	Offset 0 30 0
+}
+
+Object MarbleBrazier
+{
+	Frame HBBQA { Light MTORCH_1 }
+	Frame HBBQB { Light MTORCH_2 }
+	Frame HBBQC { Light MTORCH_3 }
+}
+
+// New torches
+FlickerLight2 BigYellowTorch
+{
+	Color 1.0 1.0 0.0
+	size 90
+	secondarySize 99
+	interval 0.1
+	offset 0 60 0
+	attenuate 1
+}
+
+Object YellowTorch
+{
+Frame YELT { Light BigYellowTorch }
+}
+
+FlickerLight2 BigWhiteTorch
+{
+	Color 1.0 1.0 1.0
+	size 90
+	secondarySize 99
+	interval 0.1
+	offset 0 60 0
+	attenuate 1
+}
+
+Object WhiteTorch
+{
+Frame TGRY { Light BigWhiteTorch }
+}
+
+FlickerLight2 BigPurpleTorch
+{
+	Color 1.0 0.0 1.0
+	size 90
+	secondarySize 99
+	interval 0.1
+	offset 0 60 0
+	attenuate 1
+}
+
+Object PurpleTorch
+{
+	
+}
+
+FlickerLight2 SmallYellowTorch
+{
+	Color 1.0 1.0 0.0
+	size 72
+	secondarySize 81
+	interval 0.1
+	offset 0 35 0
+	attenuate 1
+}
+
+Object ShortYellowTorch
+{
+	Frame SYLT { Light SmallYellowTorch }
+}
+
+FlickerLight2 SmallWhiteTorch
+{
+	Color 1.0 1.0 1.0
+	size 72
+	secondarySize 81
+	interval 0.1
+	offset 0 35 0
+	attenuate 1
+}
+
+Object ShortWhiteTorch
+{
+Frame SGYT { Light SmallWhiteTorch }
+}
+
+FlickerLight2 SmallPurpleTorch
+{
+	Color 1.0 0.0 1.0
+	size 72
+	secondarySize 81
+	interval 0.1
+	offset 0 35 0
+	attenuate 1
+}
+
+Object ShortPurpleTorch
+{
+Frame SPRT { Light SmallPurpleTorch }
+}
+
+// Roof lights
+PulseLight BIGLANTERN
+{
+    color 1.0 1.0 0.8
+    size 64
+    secondarySize 66
+    interval 0.4
+    offset 0 10 0
+}
+
+PulseLight SMALLLANTERN
+{
+    color 1.0 1.0 0.8
+    size 56
+    secondarySize 58
+    interval 0.4
+    offset 0 7 0
+}
+
+PointLight BLACKCHANDELIER
+{
+    color 0.9 0.9 0.3
+    size 48
+    offset 0 14 0
+}
+
+// Burning victim
+flickerlight BurningCorpseLight
+{
+	COLOR 1 0.9 .3
+	size 40
+	secondarySize 48
+	chance 0.5
+}
+
+Object BurningVictim
+{
+	Frame BAV2 { light BurningCorpseLight }
+}
+
+pointlight SINGLESKULLCANDLE
+{
+    color 1.0 1.0 0.3
+    size 24
+    offset 0 16 0
+	attenuate 1
+}
+
+object SkullCandle
+{
+    frame SCND { light SINGLESKULLCANDLE }
+}
+
+FlickerLight PLACEABLEFIRE
+{
+	Color 1.0 1.0 0.0
+	Size 24
+	SecondarySize 28
+	Chance 0.3
+	Offset 0 4 0
+}
+
+Object PlaceableFire
+{
+	Frame FCAND { Light PLACEABLEFIRE }
+	Frame FCANE { Light PLACEABLEFIRE }
+	Frame FCANF { Light PLACEABLEFIRE }
+}
