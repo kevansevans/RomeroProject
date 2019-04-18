@@ -18,7 +18,7 @@ episode MAP21
 	key = "Q"
 }
 
-map MAP01 ""
+map MAP01 "Decayed Outpost"
 {
     cluster = 1
 	levelnum = 1
@@ -26,7 +26,8 @@ map MAP01 ""
 	secretnext = ""
 	sky1 = "SKY1"
 	par = 60
-	music = ""
+	music = "sottodmg"
+    lightning
 }
 
 map MAP02 ""
