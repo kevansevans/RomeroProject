@@ -151,7 +151,7 @@ map MAP12 ""
 	music = ""
 }
 
-map MAP13 ""
+map MAP13 "Monstrous Edifice"
 {
 	cluster = 2
 	levelnum = 3
