@@ -363,7 +363,6 @@ DoomEdNums
 	10000 = LightBlueTorch
 	10001 = PinkTorch
 	10002 = WhiteTorch
-	11000 = PainTrain
   
 	10100 = Bush1
 	10101 = Bush2
@@ -406,4 +405,17 @@ DoomEdNums
 	10139 = FlutedRedColumn
 	10140 = SkullCandle
 	10141 = PlaceableFire
+    
+    10200 = ImpStatue
+    10201 = ImpStatueGore
+    10202 = ImpStatueSlime
+    10203 = ImpStatueBlood
+    10204 = ImpStatueWater
+    10205 = ImpStatueVines
+    10206 = ArchVileStatueSkulls
+    10207 = ArchVileStatueLeft
+    10208 = ArchVileStatueRight
+
+	11000 = PainTrain
+
 }

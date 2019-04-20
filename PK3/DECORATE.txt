@@ -1,1 +1,2 @@
 #include "DECORATE/JOM_actors.txt"
+#include "DECORATE/Statues.txt"
