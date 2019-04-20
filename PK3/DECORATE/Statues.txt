@@ -1,0 +1,103 @@
+Actor ImpStatue
+{
+	//$Category "Statues"
+	//$Title "Imp Statue"
+    //$NoDirection
+	Radius 24
+	Height 64
+	+SOLID
+	States
+	{
+	Spawn:
+		FGOR B -1
+		Stop
+	}
+}
+
+Actor ImpStatueGore : ImpStatue
+{
+	//$Title "Imp Statue Gore"
+	States
+	{
+	Spawn:
+		FGOR A -1
+		Stop
+	}
+}
+
+Actor ImpStatueBlood : ImpStatue
+{
+	//$Title "Imp Fountain Blood"
+	States
+	{
+	Spawn:
+		FIMP ABC 4
+		Loop
+	}
+}
+
+Actor ImpStatueSlime : ImpStatue
+{
+	//$Title "Imp Fountain Slime"
+	States
+	{
+	Spawn:
+		FIMP DEF 4
+		Loop
+	}
+}
+
+Actor ImpStatueWater : ImpStatue
+{
+	//$Title "Imp Fountain Water"
+	States
+	{
+	Spawn:
+		FIMP GHI 4
+		Loop
+	}
+}
+
+Actor ImpStatueVines : ImpStatue
+{
+	//$Title "Imp Statue Vines"
+	States
+	{
+	Spawn:
+		FIMP Z -1
+		Stop
+	}
+}
+
+Actor ArchVileStatueSkulls : ImpStatue
+{
+	//$Title "Archvile Statue Skulls"
+	States
+	{
+	Spawn:
+		SVIL A -1
+		Stop
+	}
+}
+
+Actor ArchVileStatueLeft : ImpStatue
+{
+	//$Title "Archvile Statue Left"
+	States
+	{
+	Spawn:
+		SVIL B -1
+		Stop
+	}
+}
+
+Actor ArchVileStatueRight : ImpStatue
+{
+	//$Title "Archvile Statue Right"
+	States
+	{
+	Spawn:
+		SVIL C -1
+		Stop
+	}
+}
