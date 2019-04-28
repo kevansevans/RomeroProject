@@ -160,7 +160,7 @@ map MAP13 "Monstrous Edifice"
 	secretnext = "MAP19"
 	sky1 = "SKY1"
 	par = 60
-	music = ""
+	music = "prfhatrd"
 }
 
 map MAP14 ""
@@ -254,7 +254,7 @@ map MAP21 ""
 	music = ""
 }
 
-map MAP22 ""
+map MAP22 "Black Tower"
 {
 	cluster = 3
 	levelnum = 2
