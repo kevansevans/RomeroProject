@@ -1,0 +1,12 @@
+switch QSW1RUNE on sound Switch1 pic QSW2RUNE tics 0
+
+switch QSW1RUN2 on sound Switch1 pic QSW2RUN2 tics 0
+
+warp flat QLAVA1
+warp flat QSLIME0
+warp flat QSLIME1
+warp flat QSLIME2
+warp flat QWATER0
+warp flat QWATER1
+warp flat QWATER2
+warp flat SLIPGATE
