@@ -160,7 +160,7 @@ map MAP13 "Monstrous Edifice"
 	secretnext = "MAP19"
 	sky1 = "SKY1"
 	par = 60
-	music = ""
+	music = "prfhatrd"
 }
 
 map MAP14 ""
@@ -254,7 +254,7 @@ map MAP21 ""
 	music = ""
 }
 
-map MAP22 ""
+map MAP24 ""
 {
 	cluster = 3
 	levelnum = 2
@@ -276,7 +276,7 @@ map MAP23 ""
 	music = ""
 }
 
-map MAP24 ""
+map MAP24 "Black Tower"
 {
 	cluster = 3
 	levelnum = 4
@@ -415,6 +415,11 @@ DoomEdNums
     10206 = ArchVileStatueSkulls
     10207 = ArchVileStatueLeft
     10208 = ArchVileStatueRight
+    
+    10300 = FireballLauncher
+    
+    10400 = QuakeEnforcer
+
 
 	11000 = PainTrain
 
