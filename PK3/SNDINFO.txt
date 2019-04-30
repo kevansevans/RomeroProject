@@ -1,2 +1,24 @@
 paintrain/hit  dspunch
 $limit paintrain/hit 32
+
+//Enforcer
+
+enforcer/sight1 "SOUNDS/monsters/Enforcer/Enfsight1.ogg"
+enforcer/sight2 "SOUNDS/monsters/Enforcer/Enfsight2.ogg"
+enforcer/sight3 "SOUNDS/monsters/Enforcer/Enfsight3.ogg"
+enforcer/sight4 "SOUNDS/monsters/Enforcer/Enfsight4.ogg"
+$random enforcer/sight { enforcer/sight1 enforcer/sight2 enforcer/sight3 enforcer/sight4 }
+
+enforcer/pain1 "SOUNDS/monsters/Enforcer/Enfpain1.ogg"
+enforcer/pain2 "SOUNDS/monsters/Enforcer/Enfpain2.ogg"
+$random enforcer/pain { enforcer/pain1 enforcer/pain2 }
+
+weapons/rage/ragegun2 "sounds/weapons/rage/rage-gun-2.ogg"
+weapons/rage/ragegun3 "sounds/weapons/rage/rage-gun-3.ogg"
+weapons/rage/ragegun4 "sounds/weapons/rage/rage-gun-4.ogg"
+
+enforcer/attack "SOUNDS/monsters/Enforcer/Enfire.ogg"
+enforcer/death "SOUNDS/monsters/Enforcer/Enfdeath1.ogg"
+enforcer/active "SOUNDS/monsters/Enforcer/Enfsight.ogg"
+
+enforcer/stop "SOUNDS/monsters/Enforcer/Enfstop.ogg"

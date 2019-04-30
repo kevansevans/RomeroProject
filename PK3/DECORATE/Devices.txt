@@ -10,7 +10,24 @@ Actor FireballLauncher
 	{
 	Spawn:
 		TNT1 A 50
-        TNT1 A 0 A_SpawnItemEx("DoomImpBall", 0, 0, 16, 16)
+        TNT1 A 0 A_SpawnItemEx("DoomImpBall", 0, 0, 16, 8)
+		Loop
+	}
+}
+
+Actor LaserBoltLauncher
+{
+	//$Category "Devices"
+	//$Title "Laser Bolt Launcher"
+    //$Sprite BAL1A0
+	Radius 24
+	Height 32
+    -RANDOMIZE
+	States
+	{
+	Spawn:
+		TNT1 A 50
+        TNT1 A 0 A_SpawnItemEx("EnforcerBolt", 0, 0, 16, 16)
 		Loop
 	}
 }

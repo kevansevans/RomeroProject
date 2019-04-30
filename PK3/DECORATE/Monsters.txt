@@ -1,56 +1,54 @@
 ACTOR QuakeEnforcer
 {
-  Health 65
+  Health 100
   Radius 20
   Height 56
   Mass 100
+  Scale 0.7
   Speed 7
   PainChance 140
   Monster
   +FLOORCLIP
-  SeeSound "shotguy/sight"
-  AttackSound "shotguy/attack"
-  PainSound "shotguy/pain"
-  DeathSound "shotguy/death"
-  ActiveSound "shotguy/active"
-  Obituary "$OB_SHOTGUY"
-  Translation "96:111=112:127", "32:47=121:127"
+  SeeSound "enforcer/sight"
+  PainSound "enforcer/pain"
+  DeathSound "enforcer/death"
+  ActiveSound "enforcer/active"
+  Obituary "%o was lasered by an Enforcer"
   States
   {
   Spawn:
-    SPOS AB 10 A_Look
+    NFRC AB 10 A_Look
     Loop
   See:
-    SPOS AABBCCDD 3 A_Chase
+    NFRC ABCDEFGH 3 A_Chase
     Loop
   Missile:
-    SPOS E 10 A_FaceTarget
-    SPOS F 10 Bright A_SpawnProjectile("EnforcerBolt")
-    SPOS E 6 A_FaceTarget
-    SPOS F 10 Bright A_SpawnProjectile("EnforcerBolt")
-    SPOS E 10
+    NFRC IJKL 2 A_FaceTarget
+    NFRC M 5 Bright A_SpawnProjectile("EnforcerBolt", 34, 8)
+    NFRC LKL 3 A_FaceTarget
+    NFRC M 5 Bright A_SpawnProjectile("EnforcerBolt", 34, 8)
+    NFRC LKJI 2
     Goto See
   Pain:
-    SPOS G 3
-    SPOS G 3 A_Pain
+    NFRC O 3
+    NFRC O 3 A_Pain
     Goto See
   Death:
-    SPOS H 5
-    SPOS I 5 A_Scream
-    SPOS J 5 A_NoBlocking
-    SPOS K 5
-    SPOS L -1
+    NFRC PQ 3
+    NFRC R 3 A_Scream
+    NFRC S 3 A_NoBlocking
+    NFRC TUVWXYZ 3
+    NFRC Z -1
     Stop
   XDeath:
-    SPOS M 5
+    NFRC O 5
     SPOS N 5 A_XScream
     SPOS O 5 A_NoBlocking
     SPOS PQRST 5
     SPOS U -1
     Stop
   Raise:
-    SPOS L 5
-    SPOS KJIH 5
+    NFRC ZYXWVUTSRQP 2
     Goto See
   }
 }
@@ -67,13 +65,13 @@ ACTOR EnforcerBolt
   +RANDOMIZE
   RenderStyle Add
   Alpha 1
-  SeeSound "imp/attack"
-  DeathSound "imp/shotx"
+  SeeSound "enforcer/attack"
+  DeathSound "enforcer/stop"
   Translation "176:191=160:167", "208:223=231:228", "168:175=167:160", "232:235=164:167"
   States
   {
   Spawn:
-    BAL1 AB 4 Bright
+    BAL1 AABB 1 Bright A_SpawnParticle("Yellow", SPF_FULLBRIGHT, random(35, 55), 3, 0, 0, 0, 0, 0, 0, -0.2)
     Loop
   Death:
     BAL1 CDE 6 Bright
