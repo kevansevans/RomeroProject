@@ -284,7 +284,7 @@ map MAP24 "Black Tower"
 	secretnext = ""
 	sky1 = "SKY1"
 	par = 60
-	music = ""
+	music = "blaktowr"
 }
 
 map MAP25 ""
@@ -420,6 +420,7 @@ DoomEdNums
     10301 = LaserBoltLauncher
     
     10400 = QuakeEnforcer
+    10401 = ImpKnight
 
 
 	11000 = PainTrain

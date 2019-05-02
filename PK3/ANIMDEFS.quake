@@ -2,6 +2,14 @@ switch QSW1RUNE on sound Switch1 pic QSW2RUNE tics 0
 
 switch QSW1RUN2 on sound Switch1 pic QSW2RUN2 tics 0
 
+switch QSW1TG1A on sound Switch1 pic QSW2TG1A tics 0
+
+texture QSW1TG1A
+    pic QSW1TG1A tics 8
+    pic QSW1TG1B tics 4
+    pic QSW1TG1C tics 4
+    pic QSW1TG1B tics 4
+
 warp flat QLAVA1
 warp flat QSLIME0
 warp flat QSLIME1

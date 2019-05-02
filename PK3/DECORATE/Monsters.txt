@@ -78,3 +78,49 @@ ACTOR EnforcerBolt
     Stop
   }
 }
+
+ACTOR ImpKnight : DoomImp
+{
+  Translation "64:79=112:127"
+  Health 250
+  Scale 1.3
+  States {
+    Melee:
+    Missile:
+        TROO E 10 A_FaceTarget
+        TROO F 4 A_SpawnProjectile("KnightBolt", 40, 16, -30)
+        TROO F 4 A_SpawnProjectile("KnightBolt", 40, 8, -15)
+        TROO G 4 A_SpawnProjectile("KnightBolt", 40, 0, 0)
+        TROO G 4 A_SpawnProjectile("KnightBolt", 40, -8, 15)
+        TROO G 4 A_SpawnProjectile("KnightBolt", 40, -16, 30)
+        Goto See
+  }
+}
+
+ACTOR KnightBolt
+{
+  Radius 3
+  Height 4
+  Scale 0.5
+  Speed 7
+  FastSpeed 10
+  Damage (random(6, 10))
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 1
+  SeeSound "imp/attack"
+  Translation "176:191=160:167", "208:223=231:228", "168:175=167:160", "232:235=164:167"
+  States
+  {
+  Spawn:
+    BAL1 A 1 Bright A_SpawnParticle("Yellow", SPF_FULLBRIGHT | SPF_RELANG | SPF_RELVEL, random(25, 65), 4, 0, 0, 0, 0, 0, 0.5, 0.2)
+    BAL1 A 0 Bright A_SpawnParticle("Yellow", SPF_FULLBRIGHT | SPF_RELANG | SPF_RELVEL, random(25, 65), 4, 0, 0, 0, 0, 0, -0.5, 0.2)
+    BAL1 B 1 Bright A_SpawnParticle("Yellow", SPF_FULLBRIGHT | SPF_RELANG | SPF_RELVEL, random(25, 65), 4, 0, 0, 0, 0, 0, 0.5, 0.2)
+    BAL1 B 0 Bright A_SpawnParticle("Yellow", SPF_FULLBRIGHT | SPF_RELANG | SPF_RELVEL, random(25, 65), 4, 0, 0, 0, 0, 0, -0.5, 0.2)
+    Loop
+  Death:
+    BAL1 CDE 6 Bright
+    Stop
+  }
+}
