@@ -124,3 +124,89 @@ ACTOR KnightBolt
     Stop
   }
 }
+
+ACTOR FlyingImp
+{
+  Translation "64:79=96:111", "176:191=240:247", "236:239=244:247", "32:47=240:247", "1:2=245:246"
+  OBITUARY "%o was blasted by an flying imp."
+  HITOBITUARY "%o was slashed by an flying imp."
+  Health 80
+  Radius 20
+  Height 56
+  Mass 100
+  Speed 8
+  PainChance 200
+  MissileType "FlyingImpBall"
+  SEESOUND "imp/sight"
+  PAINSOUND "imp/pain"
+  DEATHSOUND "imp/death"
+  ACTIVESOUND "imp/active"
+  MONSTER
+  +Float
+  +NoGravity
+  states
+  {
+  Spawn:
+    AEIM ABCD 10 A_Look
+    Loop
+  See:
+    AEIM AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    AEIM E 4 A_FaceTarget
+    AEIM F 6 A_MissileAttack
+    Goto See
+  Pain:
+    AEIM G 2
+    AEIM G 2 A_Pain
+    Goto See
+  Death:
+    AEIM H 8
+    AEIM I 8 A_Scream
+    AEIM J 6
+    AEIM K 6 A_NoBlocking
+    AEIM L 6
+    AEIM M 6
+    AEIM N -1
+    Stop
+  }
+}
+
+actor FlyingImpBall
+{
+  radius 6
+  height 8
+  speed 10
+  damage 3
+  renderstyle Add
+  seesound "imp/attack"
+  deathsound "imp/shotx"
+  PROJECTILE
+  +RANDOMIZE
+  Decal DoomImpScorch
+  states
+  {
+  Spawn:
+    DRFX ABCDEF 4 bright
+    loop
+  Death:
+    DRFX GHIJKL 6 bright
+    stop
+  }
+}
+
+actor QuakeGrunt : ShotgunGuy
+{
+    Translation "96:111=112:127", "32:47=121:127"
+    Health 80
+    Speed 3
+    PainChance 250
+    States {
+        Missile:
+            SPOS E 10 A_FaceTarget
+            SPOS F 0 bright A_PlaySound("shotguy/attack", CHAN_WEAPON)
+            SPOS F 10 bright A_CustomBulletAttack(22.5, 0, 3, random(1,4)*3, "BulletPuff", 0, CBAF_NORANDOM)
+            SPOS E 10
+            Goto See
+    }
+}

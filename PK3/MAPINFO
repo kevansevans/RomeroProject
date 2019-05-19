@@ -332,7 +332,7 @@ map MAP28 ""
     nointermission
 }
 
-map MAP29 ""
+map MAP29 "The Slipgate Complex"
 {
 	cluster = 3
 	levelnum = 9
@@ -422,6 +422,7 @@ DoomEdNums
     10400 = QuakeEnforcer
     10401 = ImpKnight
     10402 = FlyingImp
+    10403 = QuakeGrunt
 
 
 	11000 = PainTrain
